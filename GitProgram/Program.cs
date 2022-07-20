@@ -59,7 +59,38 @@ namespace GitProgram
         }
         static void Main(string[] args)
         {
+            int cart1 = 10000, cart2 = 5000;
+            int exite = 1;
+            while (exite == 1)
+            {
+                Console.WriteLine("Меню:");
+                Console.WriteLine("1.Информация\n2.Карти\n3.Первевод\n4.Выход");
+                string menu = Console.ReadLine();
+                switch (menu)
+                {
+                    case "1":
+                        {
+                            Information(); exite = 1; break;
+                        }
+                    case "2":
+                        {
+                            Card(cart1, cart2); exite = 1; break;
+                        }
+                    case "3":
+                        {
+                            Transactions(cart1, cart2); exite = 1; break;
+                        }
+                    case "4":
+                        {
+                            exite = 0; break;
+                        }
+                    default: { break; }
 
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
+            Console.ReadKey();
         }
     }
 }
